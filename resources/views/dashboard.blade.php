@@ -25,17 +25,18 @@
 <div class="container">
     <div class="row">
         <div class="col col-12 col-md-3  p-5">
-            <img src="{{asset('mofasser.jpg')}}" class="rounded-circle"  alt="">
+            <img src="{{asset('images/'.$user->profile->image)}}" class="rounded-circle"  alt="">
         </div>
         <div class="col col-12 col-md-9   pt-5">
             <div class="d-flex justify-content-between align-items-baseline">
            <h1>{{$user->username}}</h1>
-
+           @can('update',$user->profile)
           <button class="btn btn-primary"><a href="{{route('post.create')}}" style="color:white; text-decoration:none;">Add New Post</a></button>
-
+          @endcan
             </div>
+            @can('update',$user->profile)
             <a href="{{route('profile.edit',$user->id)}}" style=" text-decoration:none;">Edit Profile</a>
-
+            @endcan
           <div class="d-flex">
                 <div class="p-3"><strong>{{$user->posts->count()}}</strong>posts</div>
                 <div class="p-3"><strong>234</strong>followers</div>

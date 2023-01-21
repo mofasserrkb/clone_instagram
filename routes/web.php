@@ -37,6 +37,7 @@ Route::group(['middleware'=>'auth','prefix'=>'dashboard'],function(){
     Route::get('/p/{post}',[PostController::class, 'show'])->name('post.show');
   //  Route::get('/profile/{user}',[ProfileController::class, 'index'])->name('index');
     Route::get('/profile/{user}/edit',[ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/{user}',[ProfileController::class, 'update'])->name('profile.update');
 }
 );
 //Route::get('/dashboard/profile/{user}',[ProfileController::class, 'index'])->name('index');

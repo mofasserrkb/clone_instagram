@@ -39,7 +39,9 @@ class PostController extends Controller
             'caption'=>$data['caption'],
             'image'=>$newImageName
         ]);
-        return redirect()->route('index');
+        //return redirect()->route('index');
+        return redirect('/dashboard/home');
+
      }
      //Post model is type hinted actually it is called route model binding
      public function show(Post $post)

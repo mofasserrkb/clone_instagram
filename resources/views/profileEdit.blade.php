@@ -24,8 +24,9 @@
     </div> --}}
 <div class="container">
 
-    <form action="{{route('post.store')}}" method="post" enctype="multipart/form-data" >
+    <form action="{{route('profile.update',$user->id)}}" method="post" enctype="multipart/form-data" >
         @csrf
+        @method('put')
         <div class="row">
             <div class="col-8 offset-2">
                 <h1>Edit Profile</h1>
@@ -64,7 +65,7 @@
                    @enderror
                 </div>
 
-                <button type="submit" class="btn btn-primary">Add New Post</button>
+                <button type="submit" class="btn btn-primary">Update Profile</button>
           </div>
 
         </div>
